@@ -12,12 +12,12 @@
 
 :root {
   /* colors */
-  --background-color: cyan;
+  --background-color: rgb(215, 241, 243);
   --light-color: #f8f8f8;
   --dark-color: #505050;
   --text-color: #131313;
   --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --link-hover-color: #cf1d1d;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -161,8 +161,8 @@ a:any-link {
 }
 
 a:hover {
-  color: var(--link-hover-color);
   text-decoration: underline;
+  color: var(--link-hover-color);
 }
 
 /* buttons */
