@@ -18,6 +18,8 @@
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #cf1d1d;
+  --banner-color: #980808;
+  --light-grey-background: #D3D3D3;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -259,4 +261,8 @@ main .section.highlight {
 main .section.highlight.accordion-container {
   padding: 12px;
   background-color: lightsalmon;
+}
+
+main .section.lightgrey {
+  background-color: var(--light-grey-background);
 }

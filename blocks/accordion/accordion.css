@@ -44,3 +44,7 @@
 .accordion .item-title.open + .item-content {
     display: grid;
 }
+
+.accordion .item-title > h6 {
+    font-size: medium;
+}
