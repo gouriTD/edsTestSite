@@ -1,1 +1,11 @@
 /* add global styles that can be loaded post LCP here */
+.error .section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.error-message {
+    font-size: medium;
+}
