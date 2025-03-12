@@ -20,6 +20,7 @@
   --link-hover-color: #cf1d1d;
   --banner-color: #980808;
   --light-grey-background: #D3D3D3;
+  --light-purple-background: 	#e7e7ff;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -270,4 +271,8 @@ main .section.highlight.accordion-container {
 
 main .section.lightgrey {
   background-color: var(--light-grey-background);
+}
+
+main .section.lightpurple {
+  background-color: var(--light-purple-background);
 }

@@ -533,6 +533,37 @@ async function fetchPlaceholders(prefix = 'default') {
   return window.placeholders[`${prefix}`];
 }
 
+async function fetchUserData(prefix = 'default') {
+  window.userdata = window.userdata || {};
+  if (!window.userdata[prefix]) {
+    window.userdata[prefix] = new Promise((resolve) => {
+      fetch(`${prefix === 'default' ? '' : prefix}/userdata.json`)
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          }
+          return {};
+        })
+        .then((json) => {
+          const userData = {};
+          json.data
+            .filter((userdata) => userdata.Key)
+            .forEach((userdata) => {
+              userData[`${userdata.Key}`] = userdata.Value;
+            });
+          window.userdata[prefix] = userData;
+          resolve(window.userdata[prefix]);
+        })
+        .catch(() => {
+          // error loading userdata
+          window.userdata[prefix] = {};
+          resolve(window.userdata[prefix]);
+        });
+    });
+  }
+  return window.userdata[`${prefix}`];
+}
+
 /**
  * Builds a block DOM Element from a two dimensional array, string, or object
  * @param {string} blockName name of the block
@@ -716,6 +747,7 @@ export {
   decorateSections,
   decorateTemplateAndTheme,
   fetchPlaceholders,
+  fetchUserData,
   getMetadata,
   loadBlock,
   loadCSS,

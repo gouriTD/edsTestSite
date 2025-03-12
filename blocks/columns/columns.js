@@ -5,6 +5,11 @@ export default function decorate(block) {
   // setup image columns
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
+      // This is column wherein we have only ref links.
+      console.log(col);
+      const btnChild = col.querySelectorAll('.button-container, .button');
+      btnChild.forEach(btn=> btn.removeAttribute('class'));
+
       const pic = col.querySelector('picture');
       if (pic) {
         const picWrapper = pic.closest('div');
