@@ -3,11 +3,9 @@ import { fetchUserData } from '../../scripts/aem.js';
 
 
   // Pagination variables
-  const itemsPerPage = 5;
+  const itemsPerPage = 20;
   let currentPage = 1;
-  
- 
-  
+
   // Function to display the current page of data
    function displayData(data) {
     
@@ -55,7 +53,6 @@ import { fetchUserData } from '../../scripts/aem.js';
     }
   }
   
- 
 
 export default async function decorate(block) {
     const userDataBlock = block.querySelector(`:scope > div > div`);
@@ -76,7 +73,7 @@ export default async function decorate(block) {
             <button id="next-btn">Next</button>
     `
 
-    const userList = document.createElement('ul');
+    const userList = document.createElement('ol');
     userList.setAttribute('id','userData-list');
 
     userDataBlock.append(userList);
