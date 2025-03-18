@@ -1,0 +1,15 @@
+version: 1
+indices:
+  subjects:
+    include:
+      - '/subjects'
+    exclude:
+      - '/en/**'
+    target: /query-index.json
+    properties: 
+      new-title: 
+        select: head > meta[property="og:title"] 
+        value: |
+          attribute(el, 'content')
+           
+      
