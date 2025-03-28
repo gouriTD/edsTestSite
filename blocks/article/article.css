@@ -1,0 +1,88 @@
+.article {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--light-grey-background);
+  padding: 20px;
+}
+
+.article .article-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: flex-start; /* Aligns text and image to the top, ensuring adjacency */
+}
+
+.article .article-image {
+  flex: 0 0 auto; /* Keeps the image size fixed and adjacent to the text */
+  max-width: 40%; /* Ensures the image takes up 40% of the container width */
+  margin-right: 20px; /* Adds space between the image and text */
+}
+
+.article .article-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.article .article-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.article .article-text h4 {
+  font-size: var(--heading-font-size-xs);
+  color: var(--dark-color);
+}
+
+.article .article-text h2 {
+  font-size: var(--heading-font-size-xl);
+  color: var(--text-color);
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.article .article-text p {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+}
+
+.article .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: var(--link-color);
+  color: var(--text-color);
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.article .button:hover {
+  background-color: var(--link-hover-color);
+}
+
+@media (max-width: 600px) {
+  .article {
+    flex-direction: column;
+  }
+
+  .article .article-content {
+    flex-direction: column;
+  }
+
+  .article .article-text {
+    order: 1; /* Ensures text comes first in mobile view */
+    padding: 10px;
+  }
+
+  .article .article-image {
+    order: 2; /* Ensures image comes below text in mobile view */
+    margin-right: 0; /* Removes right margin in mobile view */
+    max-width: 100%; /* Ensures the image takes up full width in mobile view */
+  }
+}
+
+@media (min-width: 900px) {
+  .article {
+    flex-direction: row;
+  }
+}

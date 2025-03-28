@@ -15,13 +15,16 @@
   --background-color: rgb(215, 241, 243);
   --light-color: #f8f8f8;
   --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #cf1d1d;
+  --text-color: #202020;
+  /* --link-color: #3b63fb;
+  --link-hover-color: #cf1d1d; */
   --banner-color: #980808;
   --light-grey-background: #D3D3D3;
   --light-purple-background: 	#e7e7ff;
   --dark-purple-background: #4b006e;
+  --yellow: #FFEA00;
+  --link-color: #FFEA00;
+  --link-hover-color: #FFEA00;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -186,7 +189,7 @@ button {
   text-align: center;
   text-decoration: none;
   background-color: var(--link-color);
-  color: var(--background-color);
+  color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
